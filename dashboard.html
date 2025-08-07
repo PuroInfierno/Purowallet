@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Dashboard - Puro Infierno</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #111;
+      font-family: Arial, sans-serif;
+      color: white;
+      display: flex;
+      height: 100vh;
+    }
+
+    .sidebar {
+      width: 250px;
+      background-color: #1a1a1a;
+      padding: 30px 20px;
+      box-shadow: 0 0 10px red;
+    }
+
+    .sidebar h2 {
+      color: red;
+      margin-bottom: 40px;
+    }
+
+    .sidebar p {
+      font-size: 0.9em;
+      color: #ccc;
+    }
+
+    .content {
+      flex-grow: 1;
+      padding: 30px;
+      overflow-y: auto;
+    }
+
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .header h1 {
+      color: white;
+    }
+
+    .wallet {
+      margin: 30px 0;
+      padding: 20px;
+      background: #1f1f1f;
+      border-radius: 10px;
+      box-shadow: 0 0 5px #ff0000;
+    }
+
+    .wallet h3 {
+      margin: 0;
+      color: #aaa;
+    }
+
+    .wallet .amount {
+      font-size: 2em;
+      color: lime;
+      margin-top: 10px;
+    }
+
+    .chart {
+      height: 100px;
+      background: #222;
+      border-radius: 5px;
+      margin-top: 10px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+
+    th, td {
+      padding: 10px;
+      text-align: left;
+    }
+
+    th {
+      color: #ff0000;
+      border-bottom: 2px solid #ff0000;
+    }
+
+    td {
+      border-bottom: 1px solid #333;
+    }
+
+    .red {
+      color: #ff4444;
+    }
+
+    .green {
+      color: #44ff44;
+    }
+
+    .token {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .token span {
+      font-size: 1.2em;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="sidebar">
+    <h2>Puro Infierno</h2>
+    <p>User: jagadeespatel Admin Access Control </p>
+  </div>
+
+  <div class="content">
+    <div class="header">
+      <h1>Dashboard</h1>
+    </div>
+
+    <div class="wallet">
+      <h3>Wallet Balance</h3>
+      <div class="amount">6.3 BTC</div>
+      <div class="chart">
+        <!-- Placeholder for chart -->
+      </div>
+    </div>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Price</th>
+          <th>Change</th>
+          <th>Market Cap</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td class="token"><span>🟠</span> Bitcoin</td><td>$40,567.89</td><td class="red">-2.5%</td><td>789B</td></tr>
+        <tr><td class="token"><span>🔵</span> Ethereum</td><td>$2,245.67</td><td class="red">-1.8%</td><td>390B</td></tr>
+        <tr><td class="token"><span>🟢</span> Tether</td><td>$1.00</td><td class="red">-0.1%</td><td>3.4T</td></tr>
+        <tr><td class="token"><span>🟡</span> BNB</td><td>$450.12</td><td class="red">-3.2%</td><td>69B</td></tr>
+        <tr><td class="token"><span>❌</span> XRP</td><td>$30.75</td><td class="red">-2.1%</td><td>34B</td></tr>
+        <tr><td class="token"><span>🔵</span> Solana</td><td>$15.03</td><td class="red">-2.1%</td><td>61B</td></tr>
+        <tr><td class="token"><span>🟢</span> USD Coin</td><td>$1.00</td><td class="red">-0.3%</td><td>74B</td></tr>
+        <tr><td class="token"><span>🔴</span> Cardano</td><td>$0.45</td><td>otorca</td><td>12B</td></tr>
+        <tr><td class="token"><span>🔴</span> Avalanche</td><td>$30.56</td><td>otorca</td><td>30B</td></tr>
+        <tr><td class="token"><span>🟡</span> Dogecoin</td><td>$0.12</td><td>otorca</td><td>10B</td></tr>
+      </tbody>
+    </table>
+  </div>
+</body>
+</html>

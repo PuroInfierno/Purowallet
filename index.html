@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Login - Puro Infierno</title>
+  <style>
+    body {
+      background-color: #111;
+      color: white;
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+    .login-box {
+      background: #222;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px red;
+      width: 300px;
+    }
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #ff0000;
+    }
+    input {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border: none;
+      border-radius: 5px;
+    }
+    button {
+      width: 100%;
+      padding: 10px;
+      background-color: red;
+      border: none;
+      color: white;
+      font-weight: bold;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .error {
+      color: red;
+      text-align: center;
+      margin-top: 10px;
+    }
+    .success {
+      color: lime;
+      text-align: center;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="login-box">
+    <h2>Puro Infierno</h2>
+    <input type="text" id="username" placeholder="Username" />
+    <input type="password" id="password" placeholder="Password" />
+    <button onclick="login()">Login</button>
+    <div id="message"></div>
+  </div>
+
+  <script>
+    const users = {
+      "jagadeespatel": "patel@909080",
+      "Muthu_krishnan": "mkmkmk@909081",
+      "Vijay_bhosl3": "Vijay@909082",
+      "Mr.Graywolf": "Asdf@1234"
+    };
+
+    function login() {
+      const user = document.getElementById("username").value.trim();
+      const pass = document.getElementById("password").value.trim();
+      const msg = document.getElementById("message");
+
+      if (users[user] && users[user] === pass) {
+        msg.innerHTML = "<div class='success'>Login successful! ✅</div>";
+        setTimeout(() => {
+          window.location.href = "dashboard.html";
+        }, 1500);
+      } else {
+        msg.innerHTML = "<div class='error'>Invalid username or password ❌</div>";
+      }
+    }
+  </script>
+</body>
+</html>
