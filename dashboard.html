@@ -2,33 +2,41 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Dashboard - Puro Infierno</title>
+  <title>Puro Infierno - Admin Dashboard</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
   <style>
+    * { box-sizing: border-box; }
     body {
       margin: 0;
       padding: 0;
       background-color: #111;
-      font-family: Arial, sans-serif;
+      font-family: 'Segoe UI', sans-serif;
       color: white;
       display: flex;
       height: 100vh;
+      overflow: hidden;
     }
 
     .sidebar {
-      width: 250px;
+      width: 260px;
       background-color: #1a1a1a;
       padding: 30px 20px;
       box-shadow: 0 0 10px red;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
     }
 
     .sidebar h2 {
       color: red;
-      margin-bottom: 40px;
+      font-size: 1.6em;
+      margin-bottom: 30px;
     }
 
     .sidebar p {
       font-size: 0.9em;
       color: #ccc;
+      line-height: 1.5em;
     }
 
     .content {
@@ -44,44 +52,49 @@
     }
 
     .header h1 {
+      font-size: 2em;
       color: white;
-    }
-
-    .wallet {
-      margin: 30px 0;
-      padding: 20px;
-      background: #1f1f1f;
-      border-radius: 10px;
-      box-shadow: 0 0 5px #ff0000;
-    }
-
-    .wallet h3 {
       margin: 0;
-      color: #aaa;
+    }
+
+    .wallet, .market-overview, .users, .transactions, .announcements, .alerts {
+      background: #1f1f1f;
+      padding: 25px;
+      margin-top: 25px;
+      border-radius: 12px;
+      box-shadow: 0 0 10px #ff000040;
     }
 
     .wallet .amount {
-      font-size: 2em;
+      font-size: 2.5em;
       color: lime;
       margin-top: 10px;
+      font-weight: bold;
     }
 
     .chart {
-      height: 100px;
-      background: #222;
-      border-radius: 5px;
-      margin-top: 10px;
+      height: 120px;
+      background: linear-gradient(to right, #ff0000, #1f1f1f);
+      border-radius: 6px;
+      margin-top: 15px;
+      opacity: 0.5;
+    }
+
+    h3 {
+      margin-top: 0;
+      color: #ff5555;
     }
 
     table {
       width: 100%;
       border-collapse: collapse;
-      margin-top: 20px;
+      margin-top: 15px;
     }
 
     th, td {
       padding: 10px;
       text-align: left;
+      font-size: 0.95em;
     }
 
     th {
@@ -93,67 +106,130 @@
       border-bottom: 1px solid #333;
     }
 
-    .red {
-      color: #ff4444;
-    }
-
-    .green {
-      color: #44ff44;
-    }
-
     .token {
       display: flex;
       align-items: center;
       gap: 10px;
     }
 
-    .token span {
+    .token i {
       font-size: 1.2em;
+      color: #ff0000;
     }
 
+    .green { color: #44ff44; }
+    .red { color: #ff4444; }
+
+    tr:hover {
+      background-color: #222;
+      transition: 0.3s ease;
+    }
+
+    .announcement, .alert {
+      margin-top: 10px;
+      padding: 10px;
+      border-left: 5px solid #ff0000;
+      background: #1a1a1a;
+      border-radius: 5px;
+    }
+
+    .announcement i, .alert i {
+      color: #ff5555;
+      margin-right: 10px;
+    }
+
+    .user {
+      display: flex;
+      justify-content: space-between;
+      padding: 8px 0;
+      border-bottom: 1px solid #333;
+    }
+
+    .user:last-child {
+      border: none;
+    }
   </style>
 </head>
 <body>
   <div class="sidebar">
-    <h2>Puro Infierno</h2>
-    <p>User: jagadeespatel Admin Access Control </p>
+    <div>
+      <h2>Puro Infierno</h2>
+      <p><strong>User:</strong> jagadeespatel<br><strong>Role:</strong> Admin Access Control<br><strong>Network:</strong> Encrypted Layer</p>
+    </div>
+    <p style="font-size: 0.75em; color: #666;">&copy; 2025 Puro Infierno Inc.</p>
   </div>
 
   <div class="content">
     <div class="header">
-      <h1>Dashboard</h1>
+      <h1>Admin Dashboard</h1>
     </div>
 
     <div class="wallet">
-      <h3>Wallet Balance</h3>
+      <h3>Total Wallet Balance</h3>
       <div class="amount">6.3 BTC</div>
-      <div class="chart">
-        <!-- Placeholder for chart -->
-      </div>
+      <div class="chart"></div>
     </div>
 
-    <table>
-      <thead>
-        <tr>
-          <th>Name</th>
-          <th>Price</th>
-          <th>Change</th>
-          <th>Market Cap</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr><td class="token"><span>🟠</span> Bitcoin</td><td>$40,567.89</td><td class="red">-2.5%</td><td>789B</td></tr>
-        <tr><td class="token"><span>🔵</span> Ethereum</td><td>$2,245.67</td><td class="red">-1.8%</td><td>390B</td></tr>
-        <tr><td class="token"><span>🟢</span> Tether</td><td>$1.00</td><td class="red">-0.1%</td><td>3.4T</td></tr>
-        <tr><td class="token"><span>🟡</span> BNB</td><td>$450.12</td><td class="red">-3.2%</td><td>69B</td></tr>
-        <tr><td class="token"><span>❌</span> XRP</td><td>$30.75</td><td class="red">-2.1%</td><td>34B</td></tr>
-        <tr><td class="token"><span>🔵</span> Solana</td><td>$15.03</td><td class="red">-2.1%</td><td>61B</td></tr>
-        <tr><td class="token"><span>🟢</span> USD Coin</td><td>$1.00</td><td class="red">-0.3%</td><td>74B</td></tr>
-        <tr><td class="token"><span>🔴</span> Cardano</td><td>$0.45</td><td>otorca</td><td>12B</td></tr>
-        <tr><td class="token"><span>🔴</span> Avalanche</td><td>$30.56</td><td>otorca</td><td>30B</td></tr>
-        <tr><td class="token"><span>🟡</span> Dogecoin</td><td>$0.12</td><td>otorca</td><td>10B</td></tr>
-      </tbody>
-    </table>
+    <div class="market-overview">
+      <h3>Market Overview</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Token</th>
+            <th>Price</th>
+            <th>Change</th>
+            <th>Market Cap</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td class="token"><i class="fab fa-bitcoin"></i> Bitcoin</td><td>$40,567</td><td class="red">-2.5%</td><td>$789B</td></tr>
+          <tr><td class="token"><i class="fab fa-ethereum"></i> Ethereum</td><td>$2,245</td><td class="red">-1.8%</td><td>$390B</td></tr>
+          <tr><td class="token"><i class="fas fa-dollar-sign"></i> Tether</td><td>$1.00</td><td class="green">+0.1%</td><td>$3.4T</td></tr>
+          <tr><td class="token"><i class="fas fa-coins"></i> BNB</td><td>$450.12</td><td class="red">-3.2%</td><td>$69B</td></tr>
+          <tr><td class="token"><i class="fab fa-reddit-alien"></i> Dogecoin</td><td>$0.12</td><td class="green">+1.4%</td><td>$10B</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="users">
+      <h3>Recent Users</h3>
+      <div class="user"><span><i class="fas fa-user"></i> anish_p</span><span>1.2 BTC</span></div>
+      <div class="user"><span><i class="fas fa-user"></i> devnull</span><span>0.6 BTC</span></div>
+      <div class="user"><span><i class="fas fa-user"></i> crypto_night</span><span>3.0 BTC</span></div>
+      <div class="user"><span><i class="fas fa-user"></i> raiden</span><span>0.1 BTC</span></div>
+    </div>
+
+    <div class="transactions">
+      <h3>Latest Transactions</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>User</th>
+            <th>Amount</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>#TX2928</td><td>anish_p</td><td>0.4 BTC</td><td class="green">Completed</td></tr>
+          <tr><td>#TX2930</td><td>devnull</td><td>1.1 BTC</td><td class="red">Failed</td></tr>
+          <tr><td>#TX2931</td><td>raiden</td><td>0.08 BTC</td><td class="green">Completed</td></tr>
+          <tr><td>#TX2932</td><td>crypto_night</td><td>0.6 BTC</td><td class="green">Completed</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="announcements">
+      <h3>Announcements</h3>
+      <div class="announcement"><i class="fas fa-bullhorn"></i> System maintenance scheduled for 12 Aug 2025, 02:00 AM GMT.</div>
+      <div class="announcement"><i class="fas fa-bolt"></i> New update will include support for XMR wallet integration.</div>
+    </div>
+
+    <div class="alerts">
+      <h3>Security Alerts</h3>
+      <div class="alert"><i class="fas fa-shield-alt"></i> 3 failed login attempts from IP: 91.123.6.44</div>
+      <div class="alert"><i class="fas fa-exclamation-triangle"></i> Unusual withdrawal from user: devnull (Flagged)</div>
+    </div>
   </div>
 </body>
 </html>
